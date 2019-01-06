@@ -1,0 +1,56 @@
+{
+  "name": "lml-cli",
+  "version": "0.8.0",
+  "description": "Command line conversions between LML, HTML and AST objects",
+  "keywords": [
+    "lml",
+    "html",
+    "alternative",
+    "ast",
+    "compiler",
+    "translate",
+    "simple",
+    "hierarchy",
+    "dom",
+    "xml",
+    "parser"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rm -rf lib/",
+    "build": "npm run clean && npm run lint && npm run test && npm run compile",
+    "compile": "tsc && sed -i \"1s/.*/\\#\\!\\/usr\\/bin\\/env\\ node/\" lib/cli.js",
+    "lint": "tslint --project tsconfig.json",
+    "test": "rm -rf .nyc_output coverage ; npm run lint && nyc --reporter=lcov --reporter=text --exclude=\"spec/**/*.ts\" --exclude=\"*.spec.ts\" --extension .ts jasmine-ts"
+  },
+  "bin": {
+    "lml": "lib/cli.js"
+  },
+  "author": "Greg Varsanyi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lml-dom/lml-cli.git"
+  },
+  "bugs": "https://github.com/lml-dom/lml-cli/issues",
+  "homepage": "https://lml-dom.org/",
+  "dependencies": {
+    "html-lml": "0.8.0",
+    "lml": "file:../lml-0.8.0.tgz",
+    "minimist": "1.2.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "3.3.5",
+    "@types/minimist": "1.2.0",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "10.12.18",
+    "jasmine": "3.3.1",
+    "jasmine-ts": "0.3.0",
+    "mkdirp": "0.5.1",
+    "nyc": "13.1.0",
+    "ts-node": "7.0.1",
+    "tslint": "5.12.0",
+    "typedoc": "0.14.0",
+    "typescript": "3.2.2"
+  }
+}
