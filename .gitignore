@@ -7,6 +7,7 @@
 /tmp
 /lib
 /out-tsc
+/.test-tmp
 
 # dependencies
 /node_modules
