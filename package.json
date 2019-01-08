@@ -1,6 +1,6 @@
 {
   "name": "lml-cli",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Command line conversions between LML, HTML and AST objects",
   "keywords": [
     "lml",
@@ -35,8 +35,8 @@
   "bugs": "https://github.com/lml-dom/lml-cli/issues",
   "homepage": "https://lml-dom.org/",
   "dependencies": {
-    "html-lml": "0.8.0",
-    "lml": "file:../lml-0.8.0.tgz",
+    "html-lml": "0.8.1",
+    "lml": "0.8.1",
     "minimist": "1.2.0"
   },
   "devDependencies": {
